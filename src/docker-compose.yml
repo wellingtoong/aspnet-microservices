@@ -16,6 +16,9 @@ services:
   portainer:
     image: portainer/portainer-ce
 
+  mongoclient:
+    image: mongoclient/mongoclient
+
   catalog.api:
     image: ${DOCKER_REGISTRY-}catalogapi
     build:
@@ -39,3 +42,4 @@ volumes:
   portainer_data:
   postgres_data:
   pgadmin_data:
+  mongoclient_data:
