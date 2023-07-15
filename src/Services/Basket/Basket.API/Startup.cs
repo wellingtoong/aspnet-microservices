@@ -45,6 +45,7 @@ namespace Basket.API
                     cfg.Host(Configuration["EventBusSettings:HostAddress"]);
                 });
             });
+            // services.AddMassTransitHostedService();
             services.Configure<MassTransitHostOptions>(options =>
             {
                 options.WaitUntilStarted = true;
