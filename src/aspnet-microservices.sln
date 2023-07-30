@@ -37,7 +37,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus.Messages", "Buildi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{B73D9DD4-26D6-4D6A-9B0C-7D8AEFCAD21A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OcelotApiGateway", "ApiGateways\OcelotApiGateway\OcelotApiGateway.csproj", "{D97D5BA3-EF11-46F6-8C08-0295087F0993}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OcelotApiGateway", "ApiGateways\OcelotApiGateway\OcelotApiGateway.csproj", "{D97D5BA3-EF11-46F6-8C08-0295087F0993}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopping.Aggregator", "ApiGateways\Shopping.Aggregator\Shopping.Aggregator.csproj", "{43FAF5BB-8694-42DC-A487-608CD09EE025}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,6 +91,10 @@ Global
 		{D97D5BA3-EF11-46F6-8C08-0295087F0993}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D97D5BA3-EF11-46F6-8C08-0295087F0993}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D97D5BA3-EF11-46F6-8C08-0295087F0993}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43FAF5BB-8694-42DC-A487-608CD09EE025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43FAF5BB-8694-42DC-A487-608CD09EE025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43FAF5BB-8694-42DC-A487-608CD09EE025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43FAF5BB-8694-42DC-A487-608CD09EE025}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,6 +114,7 @@ Global
 		{60325539-95D2-4330-92AF-7EA4FA350D49} = {A2221631-23DA-4CFD-8E21-3A3432830782}
 		{F482FE19-2991-42F6-9616-D3BDC7F31284} = {AFD0BD60-AC61-428E-B1F0-E08655D3D27E}
 		{D97D5BA3-EF11-46F6-8C08-0295087F0993} = {B73D9DD4-26D6-4D6A-9B0C-7D8AEFCAD21A}
+		{43FAF5BB-8694-42DC-A487-608CD09EE025} = {B73D9DD4-26D6-4D6A-9B0C-7D8AEFCAD21A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2CB73853-41B7-4CFC-86F7-71CF9EA20A31}
