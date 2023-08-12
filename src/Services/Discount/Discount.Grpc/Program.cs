@@ -1,15 +1,10 @@
 using Discount.Grpc.Extensions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Discount.Grpc
 {
-    public class Program
+	public class Program
     {
         public static void Main(string[] args)
         {

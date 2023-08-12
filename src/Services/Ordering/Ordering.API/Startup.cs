@@ -1,19 +1,18 @@
+using EventBus.Messages.Common;
+using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Ordering.Infrastructure;
-using Ordering.Application;
-using MassTransit;
-using System;
 using Ordering.API.EventBusConsumer;
-using EventBus.Messages.Common;
+using Ordering.Application;
+using Ordering.Infrastructure;
 
 namespace Ordering.API
 {
-    public class Startup
+	public class Startup
     {
         public Startup(IConfiguration configuration)
         {
@@ -25,36 +24,30 @@ namespace Ordering.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddApplicationServices();
-            services.AddInfrastructureServices(Configuration);
+			services.AddApplicationServices();
+			services.AddInfrastructureServices(Configuration);
 
-            // MassTransit-RabbitMQ Configuration
-            services.AddMassTransit(config => {
+			// MassTransit-RabbitMQ Configuration
+			services.AddMassTransit(config => {
 
-                config.AddConsumer<BasketCheckoutConsumer>();
+				config.AddConsumer<BasketCheckoutConsumer>();
 
-                config.UsingRabbitMq((ctx, cfg) => {
-                    cfg.Host(Configuration["EventBusSettings:HostAddress"]);
+				config.UsingRabbitMq((ctx, cfg) => {
+					cfg.Host(Configuration["EventBusSettings:HostAddress"]);
 
-                    cfg.ReceiveEndpoint(EventBusConstants.BasketCheckoutQueue, c =>
-                    {
-                        c.ConfigureConsumer<BasketCheckoutConsumer>(ctx);
-                    });
-                });
-            });
-            // services.AddMassTransitHostedService();
-            services.Configure<MassTransitHostOptions>(options =>
-            {
-                options.WaitUntilStarted = true;
-                options.StartTimeout = TimeSpan.FromSeconds(30);
-                options.StopTimeout = TimeSpan.FromMinutes(1);
-            });
+					cfg.ReceiveEndpoint(EventBusConstants.BasketCheckoutQueue, c =>
+					{
+						c.ConfigureConsumer<BasketCheckoutConsumer>(ctx);
+					});
+				});
+			});
+			services.AddMassTransitHostedService();
 
-            // General Configuration
-            services.AddAutoMapper(typeof(Startup));
-            services.AddScoped<BasketCheckoutConsumer>();
+			// General Configuration
+			services.AddAutoMapper(typeof(Startup));
+			services.AddScoped<BasketCheckoutConsumer>();
 
-            services.AddControllers();
+			services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Ordering.API", Version = "v1" });

@@ -2,14 +2,12 @@
 using Discount.API.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
 namespace Discount.API.Controllers
 {
-    [ApiController]
+	[ApiController]
     [Route("api/v1/[controller]")]
     public class DiscountController : ControllerBase
     {

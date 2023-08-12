@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace Ordering.Application
 {
-    public static class ApplicationServiceRegistration
+	public static class ApplicationServiceRegistration
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {

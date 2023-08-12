@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Ordering.Infrastructure.Mail
 {
-    public class EmailService : IEmailService
+	public class EmailService : IEmailService
     {
         public EmailSettings _emailSettings { get; }
         public ILogger<EmailService> _logger { get; }
